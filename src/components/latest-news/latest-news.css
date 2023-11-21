@@ -1,0 +1,28 @@
+.news-container {
+    background-image: url('https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/background-blog-home-1.png');
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 67px 0;
+}
+
+.news-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 70px;
+    justify-content: center;
+}
+
+.description {
+    font-size: 16px;
+    font-weight: 500;
+    color: #737373;
+}
+
+.title {
+    margin-top: -10px;
+}

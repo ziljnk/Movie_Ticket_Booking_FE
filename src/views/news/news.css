@@ -1,0 +1,130 @@
+.news-header {
+    width: 100vw;
+    height: 577px;
+    background-image: url('@/assets/homepage/jpeg/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 10px dashed #000;
+    outline-offset: 10px;
+}
+
+.news-header-infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 100px;
+
+    background: rgba(255, 255, 255, 0.29);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+}
+
+.blog {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+a:hover {
+    color: #D96C2B !important;
+}
+
+.content-container {
+    display: flex;
+    gap: 40px;
+    padding: 70px;
+}
+
+.left-column {
+    width: 70%;
+}
+
+.right-column {
+    width: 30%;
+    position: sticky;
+    top: 100px;
+}
+
+.search-bar-container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: #D96C2B;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+.search-bar-container input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.search-bar-container input::placeholder {
+    color: #fff;
+}
+
+.search-bar-container:focus-within {
+    outline: 1px solid #D96C2B;
+    background-color: #fff;
+    color: #D96C2B;
+}
+
+.search-bar-container input:focus {
+    outline: none;
+    color: #D96C2B;
+}
+
+.search-bar-container i {
+    width: 10%;
+    line-height: 100%;
+}
+
+.box-container {
+    padding: 30px;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.box-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.category-item p, .category-item i {
+    color: #737373;
+    line-height: 100%;
+}
+
+.category-item p:hover {
+    color: #D96C2B;
+    cursor: pointer;
+}
+
+.button-tags {
+    padding: 10px 20px;
+    color: #737373;
+    background-color: #fff;
+    border: none;
+    transition: all .3s ease;
+}
+
+.button-tags:hover {
+    color: #fff;
+    background-color: #D96C2B;
+    cursor: pointer;
+}

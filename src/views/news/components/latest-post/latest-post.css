@@ -1,0 +1,39 @@
+.latest-container {
+    height: 110px;
+    transition: all .3s ease;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+.latest-container:hover {
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.latest-container img {
+    width: 70px;
+    border-radius: 8px;
+}
+
+.latest-title{
+    color: #000 !important;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.latest-title:hover{
+    color: #D96C2B !important;
+}
+
+.info-container p {
+    color: #737373;
+}
+
+.info-container{
+    margin-bottom: 0 !important;
+    justify-content: center;
+}
