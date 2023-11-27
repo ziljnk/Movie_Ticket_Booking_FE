@@ -1,0 +1,133 @@
+#movieDetailsHeader{
+    width: 100vw;
+    height: 75vh;
+    background-image: url('@/assets/homepage/jpeg/movieDetail.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 10px dashed #000;
+    outline-offset: 10px;
+}
+.navHeader{
+    margin-top: 15vh;
+}
+.movieName{
+    font-weight: bolder;
+}
+
+#movieContent {
+    /* height: 130vh; */
+    width: 100vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh 0vh;
+}
+
+#movieImageContainer {
+    width: 33%; 
+    /* height: 130vh; */
+    margin: 5vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.movieImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 10px solid #b56161; /* Add a border around the container */
+    box-sizing: border-box; /* Include the border in the total width/height */
+}
+
+#movieDescription {
+    width: 50%;
+    /* height: 130vh; */
+    background-color: #cf5c5c;
+    box-shadow: 
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 5px rgba(255, 255, 255, 0.5),
+        rgba(0, 0, 0, 0.15) 11.95px 11.95px 12.6px;
+
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+
+}
+
+#des-movieName{
+    font-weight: bolder;
+    text-align: left;
+    margin-bottom: 5vh;
+}
+.des-line{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 5vh;
+}
+.des-movieTitle{
+    width: 5vw;
+    text-align: left;
+
+}
+.des-movieInfo{
+    margin-left: 3vw;
+    font-weight: lighter;
+    color: #e6e6e6;
+    font-size: 18px;
+    text-align: left;
+
+}
+
+#des-description{
+    text-align: left;
+    margin-bottom: 5vh;
+    font-size: 18px;
+}
+#des-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 5vh;
+}
+#des-trailer{
+    padding: 8px 28px;
+    margin-right: 3vw;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    font-weight: normal;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#des-ticket{
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 175, 26);
+    color: #fff;
+    font-weight: normal;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#des-trailer:hover{
+    background-color: rgb(59, 59, 59);
+}
+
+#des-ticket:hover{
+    background-color: rgb(255, 87, 34);
+}

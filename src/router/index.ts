@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Homepage from '../views/homepage/homepage.vue'
 import News from '@/views/news/news.vue';
+import MovieDetails from '@/views/movieDetails/movieDetails.vue';
 
 import store from "@/store";
 import { MutationTypes } from "@/store/mutation-types";
@@ -31,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/news',
     name: 'news',
     component: News
+  },
+  {
+    path: '/movieDetails',
+    name: 'movieDetails',
+    component: MovieDetails
   }
   // {
   //   path: '/dashboard',
