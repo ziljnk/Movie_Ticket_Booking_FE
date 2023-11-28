@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Homepage from '../views/homepage/homepage.vue'
 import News from '@/views/news/news.vue';
 import MovieDetails from '@/views/movieDetails/movieDetails.vue';
+import ScheduleBooking from '@/views/scheduleBooking/scheduleBooking.vue';
 
 import store from "@/store";
 import { MutationTypes } from "@/store/mutation-types";
@@ -37,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/movieDetails',
     name: 'movieDetails',
     component: MovieDetails
+  },
+  {
+    path: '/scheduleBooking',
+    name: 'scheduleBooking',
+    component: ScheduleBooking
   }
   // {
   //   path: '/dashboard',

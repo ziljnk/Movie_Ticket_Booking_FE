@@ -1,0 +1,131 @@
+#scheduleHeader {
+    width: 100vw;
+    height: 75vh;
+    background-image: url("@/assets/homepage/jpeg/schedule.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 10px dashed #000;
+    outline-offset: 10px;
+}
+.navHeader {
+    margin-top: 15vh;
+}
+.scheduleName {
+    font-weight: bolder;
+}
+#schedule-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+#schedule-main {
+    margin-bottom: 10vh;
+    width: 85vw;
+    /* height: 80vh; */
+    background-color: #e8e659;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;  
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 5vh 0;
+}
+
+#schedule-movie-image {
+    width: 25%;
+    height: 85%;
+    margin-right: 1vw;
+}
+
+#schedule-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    box-shadow:
+        rgba(0, 0, 0, 0.4) 5px 5px,
+        rgba(0, 0, 0, 0.4) 5px 5px;
+}
+
+#schedule-movie-main {
+    width: 65%;
+    height: 85%;
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1vw;
+}
+
+#sch-movieName {
+    color: #000;
+    text-align: left;
+    font-weight: bold;
+}
+
+#sch-movieTime {
+    color: #303030;
+    text-align: left;
+    font-weight: normal;
+}
+.sch-detail {
+    margin-top: 3vh;
+    width: 100%;
+    display: flex;
+    /* border-top: 1px solid rgb(75, 75, 75);
+    border-bottom: 1px solid rgb(75, 75, 75); */
+    flex-direction: row;
+    padding: 2.5vh 3vh;
+    color: #000000;
+    background-color: rgb(212, 205, 76);
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    justify-content: space-between;
+}
+.sch-location-title{
+    font-weight: lighter;
+}
+
+.sch-time-container{
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sch-time{
+    cursor: pointer;
+    width: 5vw;
+    padding: 1vh 0vh;
+    border: 0.5px solid #b5b5b5;
+    margin: 0 1vw;
+    background-color: #fff;
+
+}
+.sch-time:hover{
+    background-color: rgb(255, 251, 0);
+}
+
+#select-container {
+    width: 85vw;
+    display: flex;
+    justify-content: flex-end;
+}
+#schedule-select-date {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
