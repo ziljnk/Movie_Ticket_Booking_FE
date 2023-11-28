@@ -1,0 +1,23 @@
+#movieDetailsHeader{
+    width: 100vw;
+    height: 75vh;
+    background-image: url('@/assets/homepage/jpeg/movieDetail.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 10px dashed #000;
+    outline-offset: 10px;
+}
+
+.navHeader{
+    margin-top: 15vh;
+}
+
+.moviesList{
+    padding: 150px;
+    display: flex;
+}
