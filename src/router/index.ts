@@ -3,7 +3,7 @@ import Homepage from '../views/homepage/homepage.vue'
 import News from '@/views/news/news.vue';
 import MovieDetails from '@/views/movieDetails/movieDetails.vue';
 import MoviesAll from '@/views/movieAll/moviesAll.vue';
-
+import ScheduleBooking from '@/views/scheduleBooking/scheduleBooking.vue';
 import store from "@/store";
 import { MutationTypes } from "@/store/mutation-types";
 // const getUserData = async () => {
@@ -44,6 +44,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'moviesAll',
     component: MoviesAll
   },
+  {
+    path: '/scheduleBooking',
+    name: 'scheduleBooking',
+    component: ScheduleBooking
+  }
   // {
   //   path: '/dashboard',
   //   name: 'dashboard',
