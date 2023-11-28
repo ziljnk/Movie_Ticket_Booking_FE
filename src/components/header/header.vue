@@ -8,10 +8,10 @@
         </div>
 
         <div class="nav-container">
-            <div class="nav-item">
+            <router-link to="/" class="nav-item">
                 <p>Home</p>
                 <i class="bi bi-chevron-down"></i>
-            </div>
+            </router-link>
 
             <div class="nav-item">
                 <p>Movies</p>
