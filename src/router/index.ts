@@ -6,6 +6,7 @@ import MoviesAll from '@/views/movieAll/moviesAll.vue';
 import ScheduleBooking from '@/views/scheduleBooking/scheduleBooking.vue';
 import store from "@/store";
 import { MutationTypes } from "@/store/mutation-types";
+import ChooseSeat from '@/views/chooseSeat/chooseSeat.vue';
 // const getUserData = async () => {
 //   const sessionTokens = JSON.parse(localStorage.getItem("sessionTokens")!);
 //   if (!sessionTokens) return;
@@ -48,6 +49,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/scheduleBooking',
     name: 'scheduleBooking',
     component: ScheduleBooking
+  },
+  {
+    path: '/choose-seat',
+    name: 'chooseSeat',
+    component: ChooseSeat
   }
   // {
   //   path: '/dashboard',
