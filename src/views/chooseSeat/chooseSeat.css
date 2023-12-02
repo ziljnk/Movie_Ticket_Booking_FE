@@ -1,0 +1,126 @@
+.choose-seat-header {
+    height: 200px;
+    width: 100vw;
+    padding-top: 150px;
+    background-color: antiquewhite;
+    outline: 10px dashed black;
+    outline-offset: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choose-seat-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.breadcrumb-item {
+    font-size: 20px ;
+}
+
+.breadcrumb-item.active {
+    color: #D96C2B !important;
+}
+
+.choose-seat-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.seat-cell {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #161A30;
+    color: #fff;
+    line-height: 40px;
+    border-radius: 8px;
+    transition: all .3s ease;
+}
+
+.seat-cell:nth-child(3), .seat-cell:nth-child(9) {
+    margin-right: 50px;
+}
+
+.seat-cell.active {
+    background-color: #D96C2B;
+}
+
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.seat-legend-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.seat-legend-item-color {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.seat-legend-item-available {
+    background-color: #161A30;
+}
+
+.seat-legend-item-selected {
+    background-color: #D96C2B;
+}
+
+.screen {
+    width: 500px;
+    height: 30px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.selected-seat-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.seat-col {
+    width: 300px;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.header-checkout {
+    font-size: 20px;
+    font-weight: 500;
+    color: #D96C2B;
+}
+
+.seat-row-label:nth-child(2), .seat-row-label:nth-child(8) {
+    margin-right: 50px;
+}
+
+.seat-column-label {
+    width: 10px;
+}

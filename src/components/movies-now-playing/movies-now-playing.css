@@ -92,3 +92,16 @@
 .splide__track {
     overflow: visible !important;
 }
+
+.see-all-text {
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.see-all-text:hover {
+    color: #d76b2a !important;
+}

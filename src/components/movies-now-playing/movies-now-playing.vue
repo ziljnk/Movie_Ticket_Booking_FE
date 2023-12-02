@@ -8,6 +8,11 @@
     <p class="movie-subtitle">Watch New Movies</p>
     <p class="movie-boldtitle">Movies Now Playing</p>
 
+    <router-link to="/moviesAll" class="w-100 text-end px-5 d-flex align-items-center justify-content-end gap-2 see-all-text">
+        <p class="h-100">See all</p>
+        <i class="bi bi-arrow-right h-100"></i>
+    </router-link>
+
     <div class="d-flex ">
         <div class="w-100 d-flex justify-content-center align-items-center">
             <Splide class="mx-2" :options="splideSlideOptions" ref="thumbs" aria-label="My Favorite Images">
