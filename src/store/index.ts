@@ -4,6 +4,7 @@ import actions from "./actions";
 export default createStore({
   state: {
     userData:null,
+    trailerVideoUrl: '',
   },
   getters: {
   },
@@ -11,6 +12,9 @@ export default createStore({
     setUserData(state, payload) {
       state.userData = payload;
     },
+    setTrailerVideoUrl(state, payload) {
+        state.trailerVideoUrl = payload;
+    }
   },
   actions: actions,
   modules: {

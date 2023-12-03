@@ -46,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
     component: MoviesAll
   },
   {
-    path: '/scheduleBooking',
+    path: '/scheduleBooking/:id',
     name: 'scheduleBooking',
     component: ScheduleBooking
   },
@@ -54,6 +54,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/choose-seat',
     name: 'chooseSeat',
     component: ChooseSeat
+  },
+  {
+    path: '/movie-detail/:id',
+    name: 'detailMovie',
+    component: MovieDetails
   }
   // {
   //   path: '/dashboard',

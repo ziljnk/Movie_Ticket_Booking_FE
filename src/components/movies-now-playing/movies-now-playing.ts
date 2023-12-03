@@ -1,32 +1,8 @@
+import { MutationTypes } from '@/store/mutation-types';
 import { Vue } from 'vue-class-component'
 
 export default class MoviesNowPlaying extends Vue {
-    public movies: any = [
-        {
-            category: ['Animation', 'Comedy'],
-            duration: '190',
-            name: 'Black and White Twins',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/banner-10-768x660.jpg'
-        },
-        {
-            category: ['Thriller'],
-            duration: '180',
-            name: 'The Scariest Dream',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-09-768x513.jpg'
-        },
-        {
-            category: ['Animation', 'Thriller'],
-            duration: '180',
-            name: 'The Seventh Day',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-05-768x520.jpg'
-        },
-        {
-            category: ['Thriller'],
-            duration: '180',
-            name: 'Behind The Mask',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-04-768x513.jpg'
-        },
-    ]
+    public movies: any = []
     public splideSlideOptions = {
 
         arrows: false,
@@ -43,4 +19,24 @@ export default class MoviesNowPlaying extends Vue {
         },
         pagination: false,
     };
+
+    public handleNavigateDetailMovie(id: any) {
+        this.$router.push(`/movie-detail/${id}`)
+    }
+
+    beforeMount(): void {
+        const response = this.$store.dispatch(MutationTypes.GET_ALL_MOVIES, {
+            page: 1,
+            pageSize: 4
+        })
+        response.then((result: any) => {
+            this.movies = result.data.data
+            this.movies.forEach((movie: any) => {
+                movie.genre = movie.genre.map((item: any) => item.name);
+              });
+            console.log("this.movies", this.movies)
+        }).catch((err: any) => {
+            console.log("err", err)
+        });
+    }
 }

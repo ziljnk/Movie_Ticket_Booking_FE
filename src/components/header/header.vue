@@ -10,13 +10,11 @@
         <div class="nav-container">
             <router-link to="/" class="nav-item">
                 <p>Home</p>
-                <i class="bi bi-chevron-down"></i>
             </router-link>
 
-            <div class="nav-item">
+            <router-link to="/moviesAll" class="nav-item">
                 <p>Movies</p>
-                <i class="bi bi-chevron-down"></i>
-            </div>
+            </router-link>
 
             <div class="nav-item">
                 <p>Events</p>
@@ -25,7 +23,6 @@
 
             <router-link to="/news" class="nav-item">
                 <p>News</p>
-                <i class="bi bi-chevron-down"></i>
             </router-link>
 
             <div class="nav-item">

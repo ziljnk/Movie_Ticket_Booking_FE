@@ -3,6 +3,7 @@
 
 
 <template>
+    <VideoIframe ref="video-iframe-component" :videoUrl="isOpenIframe ? movieDetail?.trailer : ''" @closeIframe="handleCloseIframe"/>
     <div class="movieDetails-wrapper">
         <header>
             <Header/>
@@ -12,48 +13,45 @@
             <nav class="navHeader" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/">Home</router-link></li>
-                    <li class="breadcrumb-item active" aria-current="page">Harry Potter and the Philosopher's Stone</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ movieDetail?.name }}</li>
                 </ol>
             </nav>
-            <h1 class="movieName">Harry Potter and the Philosopher's Stone</h1>
+            <h1 class="movieName">{{ movieDetail?.name }}</h1>
         </div>
 
         <div id="movieContent">
             <div id="movieImageContainer">
-                <img class="movieImage" src="https://cinestar.com.vn/pictures/Cinestar/11-2023/poster-nguoi-vo-cuoi-cung.jpg" alt="movieImage">
+                <img class="movieImage" :src="movieDetail?.image" alt="movieImage">
             </div>
             <div id="movieDescription">
-                <h2 id="des-movieName">Harry Potter and the Philosopher's Stone</h2>
+                <h2 id="des-movieName">{{ movieDetail?.name }}</h2>
                 <div class="des-line">
                     <h5 class="des-movieTitle">Start:</h5>
-                    <p class="des-movieInfo">From 11/12/2023</p>
+                    <p v-if="movieDetail.publishDate" class="des-movieInfo">From {{ formatDate(movieDetail?.publishDate) }}</p>
                 </div>
                 <div class="des-line">
                     <h5 class="des-movieTitle">Genre:</h5>
-                    <p class="des-movieInfo">Horror, Comedy</p>
+                    <p class="des-movieInfo" style="text-transform: capitalize;">{{ movieDetail?.genre?.join(', ') }}</p>
                 </div>
                 <div class="des-line">
                     <h5 class="des-movieTitle">Actors:</h5>
-                    <p  class="des-movieInfo">Kaity Nguyễn, Thuận Nguyễn, NSƯT Quang Thắng,...</p>
+                    <p  class="des-movieInfo">{{ movieDetail?.actors }}</p>
                 </div>
                 <div class="des-line">
                     <h5 class="des-movieTitle">Director:</h5>
-                    <p class="des-movieInfo">Victor Vũ</p>
+                    <p class="des-movieInfo">{{ movieDetail?.director }}</p>
                 </div>
                 <div class="des-line">
                     <h5 class="des-movieTitle">Time:</h5>
-                    <p  class="des-movieInfo">180 Mins</p>
+                    <p  class="des-movieInfo">{{ movieDetail?.duration }} Mins</p>
                 </div>
                 <img style="width: 48px; margin-bottom: 5vh;" src="@/assets/png/2dMovie.png"/>
-                <p id="des-description">In a small town where everyone knows everyone, a peculiar incident starts 
-                    a chain of events that leads to a child’s disappearance, which begins to tear at the fabric of 
-                    an otherwise-peaceful community. Dark government agencies and seemingly malevolent supernatural forces converge on the town,
-                     while a few of the locals begin to understand that more is going on than meets the eye.</p>
+                <p id="des-description">{{ movieDetail?.description }}</p>
                 <div id="des-btn">
-                    <button id="des-trailer">
+                    <button id="des-trailer" @click="handleOpenTrailerPopup">
                         <img style="width: 32px;" src="@/assets/png/youtube.png"/>  
                         Trailer</button>
-                    <button id="des-ticket">Get Ticket</button>
+                    <button @click="handleBookingSchedule" id="des-ticket">Get Ticket</button>
                 </div>
             </div>
         </div>

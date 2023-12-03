@@ -54,7 +54,44 @@ const actions = {
     }
   },
 
-  
+  [MutationTypes.GET_ALL_MOVIES]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Movie?page=${payload.page}&pageSize=${payload.pageSize}`);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
+
+  [MutationTypes.GET_DETAIL_MOVIE]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Movie/${payload.id}`);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
+
+  [MutationTypes.GET_MOVIE_SCHEDULE]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Schedule/searchByMovieId?movieId=${payload.id}`);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
 };
 
 export default actions;

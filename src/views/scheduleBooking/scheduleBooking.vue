@@ -14,8 +14,7 @@
                 aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/">Home</router-link></li>
-                    <li class="breadcrumb-item"><router-link to="/movieDetails">Harry Potter and the Philosopher's
-                            Stone</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/movieDetails">{{ scheduleDetail?.movie?.name }}</router-link></li>
                     <li class="breadcrumb-item active" aria-current="page" style="font-weight: bold;">Schedule</li>
                 </ol>
             </nav>
@@ -25,8 +24,7 @@
         <div id="schedule-content">
             <div id="select-container">
                 <select id="schedule-select-date" v-model="selectedDate">
-                    <option v-for="(item, index) in date" :key="index" :value="item.date">{{ item.day }}: {{ item.date }}
-                    </option>
+                    <option v-for="(item, index) in date" :key="index" :value="item.date">{{ item.day }}: {{ item.date }}</option>
                 </select>
             </div>
             <div id="schedule-main">
@@ -36,8 +34,8 @@
                         alt="movieImage">
                 </div>
                 <div id="schedule-movie-main">
-                    <h3 id="sch-movieName">Harry Potter and the Philosopher's Stone</h3>
-                    <h5 id="sch-movieTime">( Monday - 28/11/2023 )</h5>
+                    <h3 id="sch-movieName">{{ scheduleDetail?.movie?.name }}</h3>
+                    <h5 v-if="scheduleDetail.startTime && scheduleDetail.endTime" id="sch-movieTime">( {{ formatDate(scheduleDetail?.startTime) }} - {{ formatDate(scheduleDetail?.endTime) }} )</h5>
                     <div v-for="(detail, index) in scheduleDetails" :key="index" class="sch-detail">
                         <div class="sch-location">
                             <h6 class="sch-location-title">Location:</h6>
@@ -46,7 +44,7 @@
 
                         <!-- sử dụng v-for cho sch-time -->
                         <div class="sch-time-container">
-                            <div v-for="time in detail.times" :key="time" class="sch-time">{{ time }}</div>
+                            <div @click="handleChooseTime" v-for="time in detail.times" :key="time" class="sch-time">{{ time }}</div>
                         </div>
                     </div>
                 </div>
