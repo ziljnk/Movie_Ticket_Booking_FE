@@ -17,7 +17,7 @@
         <div class="w-100 d-flex justify-content-center align-items-center">
             <Splide class="mx-2" :options="splideSlideOptions" ref="thumbs" aria-label="My Favorite Images">
                 <SplideSlide :key="index" v-for="(item, index) in movies">
-                    <div class="m-1 movie-item" style="
+                    <div @click="handleNavigateDetailMovie(item.id)" class="m-1 movie-item" style="
                       padding: 8px 12px;
                       font-size: 12px;
                       width: 272px;
@@ -28,11 +28,12 @@
                       background-size: cover;
                       background-repeat: no-repeat;
                       background-position: center;
+                      cursor: pointer;
                       "
                       :style="{ 'background-image': 'url(' + item.image + ')' }"
                     >
                         <div class="info-container">
-                            <p>{{ `${item.category.join(', ')} / ${item.duration} mins` }}</p>
+                            <p style="text-transform: capitalize;">{{ `${item.genre.join(', ')} / ${item.duration} mins` }}</p>
                             <p class="movie-name">{{ item.name }}</p>
                             <button class="btn-get-ticket">Get Ticket</button>
                         </div>

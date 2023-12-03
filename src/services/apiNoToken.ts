@@ -49,7 +49,23 @@ const sendGetNoToken = async (url: string, params = {}, headers = null) => {
     }
 };
 
+const sendPutNoToken = async (url: string, payload: object, headers = null) => {
+    try {
+        const response = await $http.put(url, payload, { timeout: 600000 });
+        return response;
+    } catch (e: any) {
+        if (e.response) {
+        return e.response;
+        } else if (e.toString().includes("Network Error")) {
+        return "NETWORK_ERROR";
+        } else {
+        return null;
+        }
+    }
+}
+
 export {
   sendPostNoToken,
   sendGetNoToken,
+  sendPutNoToken
 };
