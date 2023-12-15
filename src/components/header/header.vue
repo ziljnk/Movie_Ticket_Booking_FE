@@ -4,7 +4,10 @@
 <template>
     <div class="header-wrapper">
         <div class="logo-container">
-            <img src="@/assets/png/movie-logo.png"/>
+            <router-link to="/" class="nav-item">
+                <img src="@/assets/png/movie-logo.png"/>
+
+            </router-link>
         </div>
 
         <div class="nav-container">

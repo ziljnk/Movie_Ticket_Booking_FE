@@ -85,7 +85,31 @@ const actions = {
     payload: any
   ) => {
     payload = turnOnDevMode(payload);
-    const response = await sendGetNoToken(`/Schedule/searchByMovieId?movieId=${payload.id}`);
+    const response = await sendGetNoToken(`/Schedule/${payload.id}`);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
+  [MutationTypes.GET_CURRENT_MOVIE]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Movie/getCurrent`,payload);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
+  [MutationTypes.GET_UPCOMMING_MOVIE]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Movie/getUpcoming`,payload);
     if (response) {
       return response;
     } else {
@@ -93,5 +117,7 @@ const actions = {
     }
   },
 };
+
+
 
 export default actions;

@@ -6,12 +6,12 @@ import VideoIframe from '../iframe/iframe.vue';
         VideoIframe
     }
 })
-export default class ListMovies extends Vue {
+export default class ListMoviesUp extends Vue {
     public allMovies: any = []
     public selectedMovieTrailer: any = ''
 
     beforeMount(): void {
-        const response = this.$store.dispatch(MutationTypes.GET_CURRENT_MOVIE, {
+        const response = this.$store.dispatch(MutationTypes.GET_UPCOMMING_MOVIE, {
             page: 1,
             pageSize: 1000,
         })

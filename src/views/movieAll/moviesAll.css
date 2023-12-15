@@ -18,6 +18,29 @@
 }
 
 .moviesList{
-    padding: 150px;
+    padding: 5vh 1vw;
     display: flex;
 }
+
+.nav-link{
+    color: #dd4a4a !important;
+}
+
+.nav-link:hover{
+    background-color: #e66c6c;
+    color: #fff !important;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #dd4a4a !important;
+    color: #FFF !important;
+}
+
+.modal {
+    z-index: 1050; /* Adjust the value as needed */
+  }
+  
+  .modal-backdrop {
+    z-index: 1040; /* Adjust the value as needed, should be lower than modal z-index */
+  }
+  
