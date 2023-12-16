@@ -85,7 +85,7 @@ const actions = {
     payload: any
   ) => {
     payload = turnOnDevMode(payload);
-    const response = await sendGetNoToken(`/Schedule/${payload.id}`);
+    const response = await sendGetNoToken(`/Schedule/searchByMovieId`, payload);
     if (response) {
       return response;
     } else {
