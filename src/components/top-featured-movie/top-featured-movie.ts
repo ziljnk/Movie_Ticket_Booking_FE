@@ -20,7 +20,6 @@ export default class TopFeaturedMovie extends Vue {
             this.allMovies.forEach((movie: any) => {
                 movie.genre = movie.genre.map((item: any) => item.name);
               });
-              console.log(this.allMovies)
         }).catch((err: any) => {
             console.log("err", err)
         });
@@ -36,7 +35,7 @@ export default class TopFeaturedMovie extends Vue {
     }
 
     public handleNavigateDetailMovie(id: any) {
-        this.$router.push(`/movie-detail/${id}`)
+        window.location.href = `/movie-detail/${id}`
     }
 
     public splideSlideOptions = {

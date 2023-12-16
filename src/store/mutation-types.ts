@@ -7,4 +7,6 @@ export class MutationTypes {
   public static GET_SCHEDULE_DETAIL = 'GET_SCHEDULE_DETAIL';
   public static GET_CURRENT_MOVIE = 'GET_CURRENT_MOVIE';
   public static GET_UPCOMMING_MOVIE = 'GET_UPCOMMING_MOVIE';
+  public static SEARCH_MOVIE = 'SEARCH_MOVIE';
+  public static GET_NEWS = 'GET_NEWS';
 }

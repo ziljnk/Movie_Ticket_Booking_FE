@@ -14,7 +14,5 @@
         <MoviesNowPlaying/>
 
         <TopFeaturedMovie/>
-
-        <LatestNews/>
     </div>
 </template>

@@ -9,7 +9,15 @@ import VideoIframe from '@/components/iframe/iframe.vue'
         Header,
         MoviesNowPlaying,
         VideoIframe
-    }
+    },
+    watch: {
+        movieId: {
+          handler(val, oldVal) {
+            this.fetchMovieDetail()
+          },
+          deep: true,
+        },
+      },
 })
 export default class MovieDetails extends Vue {
     public movieId: any = ''
@@ -51,6 +59,6 @@ export default class MovieDetails extends Vue {
     }
 
     public handleBookingSchedule() {
-        this.$router.push(`/scheduleBooking/${this.movieId}`)
+        window.location.href = `/scheduleBooking/${this.movieId}`
     }
 }

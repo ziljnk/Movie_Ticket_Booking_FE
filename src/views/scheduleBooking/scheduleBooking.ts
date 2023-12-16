@@ -126,7 +126,7 @@ export default class ScheduleBooking extends Vue {
   }
 
   public handleChooseTime(id:any) {
-    this.$router.push(`/choose-seat/${id}`);
+    window.location.href = `/choose-seat/${id}`
   }
 
   public handleChangeSchedule() {

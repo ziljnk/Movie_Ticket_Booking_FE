@@ -5,7 +5,7 @@
     <div class="header-wrapper">
         <div class="logo-container">
             <router-link to="/" class="nav-item">
-                <img src="@/assets/png/movie-logo.png"/>
+                <img src="@/assets/png/movie-logo.png" />
 
             </router-link>
         </div>
@@ -28,10 +28,21 @@
             </div>
         </div>
 
-        <div class="action-container">
+        <div class="action-container" style="position: relative;">
             <div class="search-bar">
-                <input type="text" placeholder="Search..."/>
+                <input type="text" v-model="searchQuery" placeholder="Search..." />
                 <i class="bi bi-search search-icon"></i>
+            </div>
+            <div class="search-result">
+                <div class="d-flex flex-row search-container" v-for="(item, index) in movieInput" @click="handleNavigateDetailMovie(item.id)">
+                    <div class="image-search">
+                        <img :src="item.image" :alt="item.name" style="width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="movie-infor d-flex flex-column">
+                        <h6>{{ item.name }}</h6>
+                        <p >{{ item.studio }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
