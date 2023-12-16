@@ -47,8 +47,8 @@
 }
 
 .movie-image {
-    width: 430px;
-    height: 246px;
+    width: 272px;
+    height: 389px;
     transition: all .5s ease-in-out;
     z-index: -1;
 }
