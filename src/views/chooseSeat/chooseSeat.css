@@ -46,7 +46,7 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
-    background-color: #161A30;
+    background-color: #26a27b;
     color: #fff;
     line-height: 40px;
     border-radius: 8px;
@@ -84,7 +84,13 @@
 }
 
 .seat-legend-item-available {
+    background-color: #26a27b;
+
+}
+
+.seat-legend-item-unavailable {
     background-color: #161A30;
+
 }
 
 .seat-legend-item-selected {
@@ -123,4 +129,9 @@
 
 .seat-column-label {
     width: 10px;
+}
+
+.booked-seat {
+    background-color: #161A30; 
+    pointer-events:none ;
 }
