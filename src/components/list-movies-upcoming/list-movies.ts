@@ -35,6 +35,6 @@ export default class ListMoviesUp extends Vue {
     }
 
     public handleNavigateDetailMovie(id: any) {
-        this.$router.push(`/movie-detail/${id}`)
+        window.location.href = `/movie-detail/${id}`
     }
 }
