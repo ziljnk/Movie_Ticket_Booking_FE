@@ -19,11 +19,6 @@
                 <p>Movies</p>
             </router-link>
 
-            <div class="nav-item">
-                <p>Events</p>
-                <i class="bi bi-chevron-down"></i>
-            </div>
-
             <router-link to="/news" class="nav-item">
                 <p>News</p>
             </router-link>
@@ -38,7 +33,6 @@
                 <input type="text" placeholder="Search..."/>
                 <i class="bi bi-search search-icon"></i>
             </div>
-            <i class="bi bi-person profile-icon"></i>
         </div>
     </div>
 </template>

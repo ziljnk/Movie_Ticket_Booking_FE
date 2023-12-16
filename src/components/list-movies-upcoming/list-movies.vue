@@ -20,8 +20,8 @@
                         " :style="{ 'background-image': 'url(' + item.image + ')' }">
                 <div class="info-container">
                     <div class="d-flex justify-content-between align-items-center w-100">
-                        <button class="btn-get-ticket" @click="handleNavigateDetailMovie(item.id)">Get Ticket</button>
                         <button class="btn-trailer" @click="handleOpenTrailerPopup(item.trailer)">Trailer</button>
+                        <button class="btn-get-ticket" @click="handleNavigateDetailMovie(item.id)">Get Ticket</button>
                     </div>
                 </div>
                 

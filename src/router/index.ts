@@ -51,7 +51,7 @@ const routes: Array<RouteRecordRaw> = [
     component: ScheduleBooking
   },
   {
-    path: '/choose-seat',
+    path: '/choose-seat/:id',
     name: 'chooseSeat',
     component: ChooseSeat
   },

@@ -1,32 +1,43 @@
-import { Vue } from 'vue-class-component'
-
+import { Vue,Options } from 'vue-class-component'
+import VideoIframe from '../iframe/iframe.vue'
+import { MutationTypes } from '@/store/mutation-types'
+@Options({
+    components: {
+        VideoIframe
+    }
+})
 export default class TopFeaturedMovie extends Vue {
-    public movies: any = [
-        {
-            category: ['Comedy'],
-            duration: '190',
-            name: 'The Fifth Day',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-12-768x513.jpg'
-        },
-        {
-            category: ['Thriller'],
-            duration: '180',
-            name: 'The Scariest Dream',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-09-768x513.jpg'
-        },
-        {
-            category: ['Animation', 'Thriller'],
-            duration: '180',
-            name: 'The Seventh Day',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-05-768x520.jpg'
-        },
-        {
-            category: ['Thriller'],
-            duration: '180',
-            name: 'Behind The Mask',
-            image: 'https://demo.ovatheme.com/aovis/wp-content/uploads/2023/03/movie-image-04-768x513.jpg'
-        },
-    ]
+    public allMovies: any = []
+    public selectedMovieTrailer: any = ''
+
+    beforeMount(): void {
+        const response = this.$store.dispatch(MutationTypes.GET_UPCOMMING_MOVIE, {
+            page: 1,
+            pageSize: 1000,
+        })
+        response.then((result: any) => {
+            this.allMovies = result.data.data
+            this.allMovies.forEach((movie: any) => {
+                movie.genre = movie.genre.map((item: any) => item.name);
+              });
+              console.log(this.allMovies)
+        }).catch((err: any) => {
+            console.log("err", err)
+        });
+    }
+
+    public async handleOpenTrailerPopup(videoUrl: any) {
+        this.selectedMovieTrailer = await videoUrl;
+        await (this.$refs['video-iframe-component'] as any).openModal()
+    }
+
+    public handleCloseIframe() {
+        this.selectedMovieTrailer = ''
+    }
+
+    public handleNavigateDetailMovie(id: any) {
+        this.$router.push(`/movie-detail/${id}`)
+    }
 
     public splideSlideOptions = {
 

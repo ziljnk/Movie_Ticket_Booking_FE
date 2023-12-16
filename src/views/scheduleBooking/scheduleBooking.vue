@@ -14,7 +14,12 @@
                 aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/">Home</router-link></li>
-                    <li class="breadcrumb-item"><router-link to="/movieDetails">{{ scheduleDetails[0]?.movie?.name }}</router-link></li>
+                    <li class="breadcrumb-item">
+                        <router-link :to="'/movie-detail/' + (movieID)">
+                            {{ movieName }}
+                        </router-link>
+                    </li>
+
                     <li class="breadcrumb-item active" aria-current="page" style="font-weight: bold;">Schedule</li>
                 </ol>
             </nav>
@@ -24,27 +29,26 @@
         <div id="schedule-content">
             <div id="select-container">
                 <select id="schedule-select-date" v-model="selectedDate">
-                    <option v-for="(item, index) in date" :key="index" :value="item.value">{{ item.day }}: {{ item.date }}</option>
+                    <option v-for="(item, index) in date" :key="index" :value="item.value">{{ item.day }}: {{ item.date }}
+                    </option>
                 </select>
             </div>
             <div id="schedule-main">
                 <div id="schedule-movie-image">
-                    <img id="schedule-image"
-                        :src="movieImage"
-                        alt="movieImage">
+                    <img id="schedule-image" :src="movieImage" alt="movieImage">
                 </div>
                 <div id="schedule-movie-main">
-                    <h3 id="sch-movieName">{{ movieName}}</h3>
+                    <h3 id="sch-movieName">{{ movieName }}</h3>
                     <h5 v-if="selectedDate" id="sch-movieTime">( {{ formatDate(selectedDate) }} )</h5>
-                    <div v-for="(detail, index) in scheduleDetails" :key="index" class="sch-detail">
-                        <div class="sch-location">
-                            <h6 class="sch-location-title">Location:</h6>
-                            <h6 class="sch-location-name">{{ detail.theatre.name }}</h6>
+                    <div class="sch-detail d-flex flex-row align-items-center">
+                        <div class="sch-location d-flex ">
+                            <h6>Schedule:</h6>
                         </div>
 
                         <!-- sử dụng v-for cho sch-time -->
-                        <div class="sch-time-container">
-                            <div @click="handleChooseTime" v-for="item in detail" :key="item.id" class="sch-time">{{ item.price }}</div>
+                        <div class="sch-time-container d-flex flex-row align-items-center flex-wrap">
+                            <div  v-for="(schedule, index) in selectedScheduleDetails" @click="handleChooseTime(schedule.id)"
+                                :key="schedule.id" class="sch-time">{{ schedule.startTime.slice(11, 16) }}</div>
                         </div>
                     </div>
                 </div>

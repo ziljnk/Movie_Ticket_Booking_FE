@@ -80,12 +80,25 @@ const actions = {
     }
   },
 
-  [MutationTypes.GET_MOVIE_SCHEDULE]: async (
+  [MutationTypes.GET_SCHEDULE_DETAIL]: async (
     { commit }: { commit: any },
     payload: any
   ) => {
     payload = turnOnDevMode(payload);
     const response = await sendGetNoToken(`/Schedule/${payload.id}`);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
+
+  [MutationTypes.GET_MOVIE_SCHEDULE]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Schedule/searchByMovieId`, payload);
     if (response) {
       return response;
     } else {
