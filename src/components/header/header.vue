@@ -23,9 +23,9 @@
                 <p>News</p>
             </router-link>
 
-            <div class="nav-item">
+            <router-link to="/contact-us" class="nav-item">
                 <p>Contact us</p>
-            </div>
+            </router-link>
         </div>
 
         <div class="action-container" style="position: relative;">
