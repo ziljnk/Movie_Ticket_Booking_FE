@@ -12,9 +12,8 @@
             <p class="title">Upcoming Movie</p>
         </div>
 
-        <div class="d-flex ">
-            <div>
-                <Splide class="mx-2" :options="splideSlideOptions" ref="thumbs" aria-label="My Favorite Images">
+        <!-- <div class="d-flex "> -->
+                <Splide class="mx-2 w-100" :options="splideSlideOptionsUpcoming" ref="thumbs" aria-label="My Favorite Images">
                     <SplideSlide :key="index" v-for="(item, index) in allMovies" class="d-flex flex-column align-items-center">
                         <img :src="item.image" class="movie-image"/>
                         <div class="infor-container">
@@ -38,7 +37,6 @@
                         </div>
                     </SplideSlide>
                 </Splide>
-            </div>
-        </div>
+        <!-- </div> -->
     </div>
 </template>

@@ -3,7 +3,6 @@
 <script lang="ts" src="./list-movies.ts"></script>
 
 <template>
-    <VideoIframe ref="video-iframe-component" :videoUrl="selectedMovieTrailer" @closeIframe="handleCloseIframe"/>
     <div class="d-flex flex-wrap" >
         <div v-for="(item, index) in allMovies" :key="index" style="margin-bottom: 5vh;">
             <div class="m-1 movie-item cursor_pointer movie-content" style="

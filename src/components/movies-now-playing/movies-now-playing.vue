@@ -16,22 +16,21 @@
             <i class="bi bi-arrow-right h-100"></i>
         </router-link>
 
-        <div class="d-flex ">
             <div class="w-100 d-flex justify-content-center align-items-center">
-                <Splide class="mx-2" :options="splideSlideOptions" ref="thumbs" aria-label="My Favorite Images">
+                <Splide class="mx-2 w-100" :options="splideSlideOptions" ref="thumbs" aria-label="My Favorite Images">
                     <SplideSlide :key="index" v-for="(item, index) in movies">
                         <div class="m-1 movie-item" style="
-                      padding: 8px 12px;
-                      font-size: 12px;
-                      width: 272px;
-                      height: 389px;
-                      background: #ffffff;
-                      border-radius: 8px; 
-                      border: 0;
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      background-position: center;
-                      cursor: pointer;
+                            padding: 8px 12px;
+                            font-size: 12px;
+                            width: 272px;
+                            height: 389px;
+                            background: #ffffff;
+                            border-radius: 8px; 
+                            border: 0;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            cursor: pointer;
                       " :style="{ 'background-image': 'url(' + item.image + ')' }">
                             <div class="info-container">
                                 <div class="d-flex justify-content-between align-items-center w-100">
@@ -50,6 +49,5 @@
                     </SplideSlide>
                 </Splide>
             </div>
-        </div>
     </div>
 </template>

@@ -129,6 +129,19 @@ const actions = {
       return null;
     }
   },
+
+  [MutationTypes.REQUEST_CHECKOUT]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Stripe`,payload);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
 };
 
 

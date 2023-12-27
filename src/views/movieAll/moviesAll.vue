@@ -2,6 +2,7 @@
 <script lang="ts" src="./moviesAll.ts"></script>
 
 <template>
+    <VideoIframe ref="video-iframe-component" :videoUrl="selectedVideoUrl" @closeIframe="handleCloseIframe"/>
     <div>
         <header>
             <Header />
@@ -40,11 +41,11 @@
                     style="background:#fff; border-radius: 16px;position: relative;">
                     <div class="tab-pane fade show active" id="pills-movie" role="tabpanel"
                         aria-labelledby="pills-movie-tab" style="min-height: 100vh;" v-motion-slide-left>
-                        <ListMovies />
+                        <ListMovies @openTrailerPopup="handleOpenIframe"/>
                     </div>
                     <div class="tab-pane fade" id="pills-genre" role="tabpanel" aria-labelledby="pills-genre-tab"
                         style="min-height: 100vh;" v-motion-slide-left>
-                        <ListMoviesUp />
+                        <ListMoviesUp @openTrailerPopup="handleOpenIframe"/>
                     </div>
                 </div>
 
