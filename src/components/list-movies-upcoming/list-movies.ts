@@ -1,10 +1,7 @@
 import { MutationTypes } from '@/store/mutation-types';
 import { Vue, Options } from 'vue-class-component'
-import VideoIframe from '../iframe/iframe.vue';
 @Options({
-    components: {
-        VideoIframe
-    }
+    emits: ['openTrailerPopup']
 })
 export default class ListMoviesUp extends Vue {
     public allMovies: any = []
@@ -26,8 +23,7 @@ export default class ListMoviesUp extends Vue {
     }
 
     public async handleOpenTrailerPopup(videoUrl: any) {
-        this.selectedMovieTrailer = await videoUrl;
-        await (this.$refs['video-iframe-component'] as any).openModal()
+        this.$emit('openTrailerPopup', videoUrl)
     }
 
     public handleCloseIframe() {

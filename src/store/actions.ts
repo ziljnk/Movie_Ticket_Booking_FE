@@ -142,22 +142,32 @@ const actions = {
       return null;
     }
   },
-
-  [MutationTypes.SEARCH_MOVIE] : async (
+    
+    [MutationTypes.REQUEST_CHECKOUT]: async (
+    { commit }: { commit: any },
+    payload: any
+  ) => {
+    payload = turnOnDevMode(payload);
+    const response = await sendGetNoToken(`/Stripe`,payload);
+    if (response) {
+      return response;
+    } else {
+      return null;
+    }
+  },
+    
+     [MutationTypes.SEARCH_MOVIE]: async (
     { commit }: { commit: any },
     payload: any
   ) => {
     payload = turnOnDevMode(payload);
     const response = await sendGetNoToken("/Movie/search", payload);
-
     if (response) {
-      return response
+      return response;
     } else {
-      return null
+      return null;
     }
   },
 };
-
-
 
 export default actions;

@@ -38,20 +38,14 @@ export default class TopFeaturedMovie extends Vue {
         window.location.href = `/movie-detail/${id}`
     }
 
-    public splideSlideOptions = {
-
+    public splideSlideOptionsUpcoming = {
         arrows: false,
         autoWidth: true,
         rewind: true,
-        perPage: 1,
+        perPage: 3,
         gap: "0.6rem",
         perMove: 1,
         // height : '15rem',
-        breakpoints: {
-            1000: {
-                perPage: 1,
-            },
-        },
         pagination: false,
     };
 }

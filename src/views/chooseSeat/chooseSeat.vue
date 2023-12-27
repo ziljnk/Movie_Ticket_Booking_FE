@@ -65,7 +65,7 @@
                     </tr>
                 </table>
             </div>
-            <button class="button-primary mt-5">Check out</button>
+            <button @click="handleCheckout" class="button-primary mt-5">Check out</button>
         </div>
     </div>
 </template>

@@ -48,5 +48,5 @@ export default class ChooseSeat extends Vue {
         return this.schedulBookedSeat.some(
           (seat: any) => seat?.seat?.row === row && seat?.seat?.number === number
         );
-      }
+    }
 }

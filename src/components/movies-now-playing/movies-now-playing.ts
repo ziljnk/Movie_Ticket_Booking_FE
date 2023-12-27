@@ -15,22 +15,16 @@ export default class MoviesNowPlaying extends Vue {
 
     public splideSlideOptions = {
         arrows: true,
-        autoWidth: true,
         rewind: true,
-        perPage: 4,      // Số lượng hiển thị trên mỗi trang
-        perMove: 1,      // Số lượng item được chuyển đến khi trượt
+        perPage: 5,      
+        perMove: 1,      
         gap: "0.6rem",
-        breakpoints: {
-          4: {
-            perPage: 4,  // Số lượng hiển thị trên mỗi trang khi độ rộng màn hình là 4 hoặc lớn hơn
-          },
-        },
         pagination: false,
       };
       
 
     public handleNavigateDetailMovie(id: any) {
-      window.location.href = `/movie-detail/${id}`
+        window.location.href = `/movie-detail/${id}`
     }
 
     beforeMount(): void {
@@ -39,7 +33,7 @@ export default class MoviesNowPlaying extends Vue {
             pageSize: 10,
         })
         response.then((result: any) => {
-            this.movies = result.data.data
+            this.movies = result.data.data;
             this.movies.forEach((movie: any) => {
                 movie.genre = movie.genre.map((item: any) => item.name);
               });
