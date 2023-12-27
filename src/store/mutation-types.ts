@@ -8,4 +8,6 @@ export class MutationTypes {
   public static GET_CURRENT_MOVIE = 'GET_CURRENT_MOVIE';
   public static GET_UPCOMMING_MOVIE = 'GET_UPCOMMING_MOVIE';
   public static REQUEST_CHECKOUT = 'REQUEST_CHECKOUT';
+  public static SEARCH_MOVIE = 'SEARCH_MOVIE';
+  public static GET_NEWS = 'GET_NEWS';
 }
