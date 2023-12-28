@@ -8,6 +8,7 @@ import store from "@/store";
 import { MutationTypes } from "@/store/mutation-types";
 import ChooseSeat from '@/views/chooseSeat/chooseSeat.vue';
 import SuccessPayment from '@/views/success-payment/success-payment.vue';
+import ContactUs from '@/views/contactUs/contactUs.vue';
 // const getUserData = async () => {
 //   const sessionTokens = JSON.parse(localStorage.getItem("sessionTokens")!);
 //   if (!sessionTokens) return;
@@ -65,15 +66,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/payment-success',
     name: 'paymentSuccess',
     component: SuccessPayment
-  }
-  // {
-  //   path: '/dashboard',
-  //   name: 'dashboard',
-  //   component: DashBoard,
-  //   meta: {
-  //     requiresAuth: true,
-  //   },
-  // },
+  },
+  {
+    path: '/contact-us',
+    name: 'contactUs',
+    component: ContactUs,
+  },
 ]
 
 const router = createRouter({
