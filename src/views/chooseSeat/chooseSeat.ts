@@ -49,4 +49,8 @@ export default class ChooseSeat extends Vue {
           (seat: any) => seat?.seat?.row === row && seat?.seat?.number === number
         );
     }
+
+    public handleCheckout() {
+        window.location.href = `https://book.stripe.com/test_eVabMq0X06hp95ScMM`;
+    }
 }

@@ -7,6 +7,7 @@ import ScheduleBooking from '@/views/scheduleBooking/scheduleBooking.vue';
 import store from "@/store";
 import { MutationTypes } from "@/store/mutation-types";
 import ChooseSeat from '@/views/chooseSeat/chooseSeat.vue';
+import SuccessPayment from '@/views/success-payment/success-payment.vue';
 // const getUserData = async () => {
 //   const sessionTokens = JSON.parse(localStorage.getItem("sessionTokens")!);
 //   if (!sessionTokens) return;
@@ -59,6 +60,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/movie-detail/:id',
     name: 'detailMovie',
     component: MovieDetails
+  },
+  {
+    path: '/payment-success',
+    name: 'paymentSuccess',
+    component: SuccessPayment
   }
   // {
   //   path: '/dashboard',
