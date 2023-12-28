@@ -29,6 +29,7 @@ export default class News extends Vue {
           .then((result: any) => {
             this.News = result.data.data;
             this.totalPages = result.data.totalPages
+            console.log("news", this.News)
           })
           .catch((err: any) => {
             console.log("err", err);
